@@ -1,0 +1,104 @@
+
+<head>
+<title>Nattr</title>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+
+<div class="header">
+	<div class="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+        	<div class="navbar-header">
+	            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+	            </button>
+	            <a href="#" class="navbar-brand scroll-top">Nattr</a>
+        	</div>
+        	<!--/.navbar-header-->
+	        <div id="main-nav" class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav">
+		            <li><a href="#" class="scroll-link" data-id="africa">London</a></li>
+					<li><a href="#" class="scroll-link" data-id="antarctica">Edinburgh</a></li>
+					<li><a href="#" class="scroll-link" data-id="asia">Oxford</a></li>
+					<li><a href="#" class="scroll-link" data-id="australia">Cambridge</a></li>
+					<li><a href="#" class="scroll-link" data-id="europe">Manchester</a></li>
+					<li><a href="#" class="scroll-link" data-id="north-america">Liverpool</a></li>
+					<li><a href="#" class="scroll-link" data-id="south-america">Birmingham</a></li>
+                    <li><a href="#" class="scroll-link" data-id="south-america">Newcastle</a></li>
+	            </ul>
+	        </div>
+	        <!--/.navbar-collapse-->
+	    </nav>
+	    <!--/.navbar-->
+	</div>
+	<!--/.container-->
+</div>
+<!--/.header-->
+
+
+
+<br>
+    
+
+
+
+<div id="europe" class="page-section">
+	<div class="container">
+		<h2>London</h2>
+		<p class="caption">
+        Need a hand in moving out, or another player to even up the teams? Trying to get the word out about a good cause or a great free event tonight? Maybe you need a hand in moving out in exchange for a crate of beers or a neighbourly favour. Whatever your reason, go ahead and chat with your fellow londoners by having a nattr below!
+        </p>
+		
+            
+           
+        <div>
+        <p class="caption">
+            <p class = "input">
+             {{> input}}
+        </p>
+      {{> messages}}
+            {{#if error}}
+        <p>Error: {{error.message}}</p>
+      {{/if}}
+            <br/>
+        </p>
+        </div>
+        
+	</div>
+	<!--/.container-->
+</div>
+<!--/#europe-->
+
+
+
+
+
+</body>
+
+
+<template name="welcome">
+  <p>
+    Welcome to the example chat app! Please log in to show your username.
+  </p>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    <div class="card">
+      <strong>{{name}}:</strong> {{message}}<br>
+      <small>
+        {{formatTime createdAt}}
+      </small>
+    </div>
+  {{/each}}
+</template>
+
+<template name="input">
+  <p><input type="text" id="message"></p>
+</template>
